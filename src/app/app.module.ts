@@ -7,12 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
+    path: 'contactmanager',
+    loadChildren: () =>
+      import('./contactmanager/contactmanager.module').then(
+        (m) => m.ContactManagerModule
+      ),
+  },
+  {
     path: 'demo',
     loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
   },
   {
     path: '**',
-    redirectTo: 'demo',
+    redirectTo: 'contactmanager',
   },
 ];
 
