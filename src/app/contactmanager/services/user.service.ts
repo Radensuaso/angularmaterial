@@ -1,11 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class UserService {
   private _users: BehaviorSubject<User[]>;
 
@@ -20,6 +18,10 @@ export class UserService {
 
   get users(): Observable<User[]> {
     return this._users.asObservable();
+  }
+
+  userById(id: number): User | undefined {
+    return this.dataStore.users.find((x) => x.id == id);
   }
 
   loadAll() {
