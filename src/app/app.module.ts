@@ -30,7 +30,6 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

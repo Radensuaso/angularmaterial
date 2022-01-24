@@ -9,6 +9,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 
 const routes: Routes = [
   {
@@ -32,7 +34,9 @@ const routes: Routes = [
     FormsModule,
     FlexLayoutModule,
     RouterModule.forChild(routes),
+    HttpClientModule,
   ],
+  providers: [UserService],
   exports: [RouterModule],
 })
 export class ContactManagerModule {}
