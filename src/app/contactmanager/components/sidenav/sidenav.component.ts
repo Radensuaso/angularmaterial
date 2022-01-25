@@ -35,12 +35,6 @@ export class SidenavComponent implements OnInit {
 
     this.users = this.userService.users;
     this.userService.loadAll();
-
-    // this.router.events.subscribe(() => {
-    //   if (this.isScreenSmall) {
-    //     this.drawer.close();
-    //   }
-    // });
   }
 
   closeDrawer(): void {
