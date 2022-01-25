@@ -11,6 +11,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     ToolbarComponent,
     MainContentComponent,
     SidenavComponent,
+    NotesComponent,
   ],
   imports: [
     CommonModule,
