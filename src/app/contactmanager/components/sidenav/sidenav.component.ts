@@ -1,3 +1,4 @@
+import { Direction } from '@angular/cdk/bidi';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -17,6 +18,8 @@ export class SidenavComponent implements OnInit {
   public isScreenSmall: boolean = false;
 
   users!: Observable<User[]>;
+  isDarkTheme: boolean = false;
+  dir: Direction = 'ltr';
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -25,6 +28,14 @@ export class SidenavComponent implements OnInit {
   ) {}
 
   @ViewChild('drawer') drawer: MatDrawer | undefined;
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDir() {
+    this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr';
+  }
 
   ngOnInit(): void {
     this.breakpointObserver
