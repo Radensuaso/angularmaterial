@@ -16,7 +16,7 @@ const SMALL_WIDTH_BREAKPOINT = 720;
 export class SidenavComponent implements OnInit {
   public isScreenSmall: boolean = false;
 
-  users: Observable<User[]> | undefined;
+  users!: Observable<User[]>;
 
   constructor(
     private breakpointObserver: BreakpointObserver,

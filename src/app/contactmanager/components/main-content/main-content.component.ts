@@ -9,7 +9,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./main-content.component.css'],
 })
 export class MainContentComponent implements OnInit {
-  user?: User | null;
+  user: User | null | undefined;
   constructor(private route: ActivatedRoute, private service: UserService) {}
 
   ngOnInit(): void {
